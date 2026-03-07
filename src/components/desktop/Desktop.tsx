@@ -10,7 +10,7 @@ import { useAppStore } from '@/stores/appStore'
 
 const desktopIcons = [
   { id: 'manifesto', icon: '📜', label: 'manifesto.exe' },
-  { id: 'games', icon: '🎮', label: 'nostalgia_games' },
+  { id: 'games', icon: '🎮', label: 'dreamcore_games' },
   { id: 'chart', icon: '📈', label: 'chart.exe' },
   { id: 'gallery', icon: '🖼️', label: 'gallery.jpg' },
   { id: 'readme', icon: '📝', label: 'README.txt' },
@@ -21,8 +21,8 @@ const desktopIcons = [
 const appConfigs: Record<string, { title: string; icon: string; width: number; height: number }> = {
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
-  games: { title: 'Nostalgia Games', icon: '🎮', width: 300, height: 200 },
-  minesweeper: { title: 'Minesweeper - $NOSTALGIA Edition', icon: '💣', width: 320, height: 420 },
+  games: { title: 'Dreamcore Games', icon: '🎮', width: 300, height: 200 },
+  minesweeper: { title: 'Minesweeper - $DREAMCORE Edition', icon: '💣', width: 320, height: 420 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
   socials: { title: 'Socials', icon: '💬', width: 300, height: 250 },
   gallery: { title: 'Gallery', icon: '🖼️', width: 600, height: 500 },
@@ -124,7 +124,7 @@ function GamesMenu({ onOpenGame }: { onOpenGame: (game: string) => void }) {
   )
 }
 
-const manifestoContent = `NOSTALGIA - THE MANIFESTO
+const manifestoContent = `DREAMCORE - THE MANIFESTO
 ══════════════════════════════════
 
 We remember.
@@ -136,7 +136,7 @@ Before notifications ruled us.
 Before algorithms decided what we see.
 Before everything became "content."
 
-$NOSTALGIA isn't just a token.
+$DREAMCORE isn't just a token.
 It's a time machine.
 It's the feeling of simpler times.
 It's proof that sometimes, going back is moving forward.
@@ -158,7 +158,7 @@ if you're reading this, you're early. or late.
 doesn't matter.
 you're here now and that's what counts.
 
-$NOSTALGIA is for those who remember.
+$DREAMCORE is for those who remember.
 remember what? you already know.
 
 the dial-up sound.
@@ -168,7 +168,7 @@ the feeling of your first computer.
 try to explain this to someone who wasn't there.
 go ahead. we'll wait.
 
-you can't vamp nostalgia.
+you can't vamp dreamcore.
 you can't fake memories.
 you either remember or you don't.
 

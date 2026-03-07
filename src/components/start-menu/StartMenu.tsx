@@ -21,8 +21,8 @@ const menuItems = [
 const appConfigs: Record<string, { title: string; icon: string; width: number; height: number }> = {
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
-  games: { title: 'Nostalgia Games', icon: '🎮', width: 300, height: 200 },
-  minesweeper: { title: 'Minesweeper - $NOSTALGIA Edition', icon: '💣', width: 320, height: 420 },
+  games: { title: 'Dreamcore Games', icon: '🎮', width: 300, height: 200 },
+  minesweeper: { title: 'Minesweeper - $DREAMCORE Edition', icon: '💣', width: 320, height: 420 },
   paint: { title: 'Paint', icon: '🎨', width: 600, height: 450 },
   snake: { title: 'Snake', icon: '🐍', width: 400, height: 450 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
@@ -65,7 +65,7 @@ export function StartMenu() {
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a246a] to-[#a6caf0] p-2 flex items-center gap-2">
         <span className="text-2xl">🪟</span>
-        <span className="text-white font-bold text-lg">$NOSTALGIA</span>
+        <span className="text-white font-bold text-lg">$DREAMCORE</span>
       </div>
 
       {/* Menu Items */}
