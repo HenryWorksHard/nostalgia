@@ -1,15 +1,27 @@
 'use client'
 
+import { useEffect } from 'react'
 import { useAppStore } from '@/stores/appStore'
 
 export function Landing() {
   const { setPhase } = useAppStore()
+
+  // Preload video while on landing page
+  useEffect(() => {
+    const video = document.createElement('video')
+    video.preload = 'auto'
+    video.src = '/video/intro.mp4'
+    video.load()
+  }, [])
 
   return (
     <div 
       className="w-full h-screen bg-black flex flex-col items-center justify-center cursor-pointer"
       onClick={() => setPhase('video')}
     >
+      {/* Preload video in hidden element */}
+      <link rel="preload" href="/video/intro.mp4" as="video" type="video/mp4" />
+      
       {/* Logo placeholder - replace with actual logo */}
       <div className="mb-16 text-center">
         <h1 className="text-6xl font-bold mb-4">
