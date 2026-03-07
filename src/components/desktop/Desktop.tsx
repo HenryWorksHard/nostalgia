@@ -5,6 +5,8 @@ import { Taskbar } from '../taskbar/Taskbar'
 import { Window } from '../window/Window'
 import { Notepad } from '../apps/Notepad'
 import { Minesweeper } from '../apps/Minesweeper'
+import { Snake } from '../apps/Snake'
+import { Paint } from '../apps/Paint'
 import { useWindowStore } from '@/stores/windowStore'
 import { useAppStore } from '@/stores/appStore'
 
@@ -23,6 +25,8 @@ const appConfigs: Record<string, { title: string; icon: string; width: number; h
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
   games: { title: 'Dreamcore Games', icon: '🎮', width: 300, height: 200 },
   minesweeper: { title: 'Minesweeper - $DREAMCORE Edition', icon: '💣', width: 320, height: 420 },
+  snake: { title: 'Snake - $DREAMCORE Edition', icon: '🐍', width: 420, height: 480 },
+  paint: { title: 'Paint - $DREAMCORE', icon: '🎨', width: 600, height: 500 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
   socials: { title: 'Socials', icon: '💬', width: 300, height: 250 },
   gallery: { title: 'Gallery', icon: '🖼️', width: 600, height: 500 },
@@ -57,6 +61,10 @@ export function Desktop() {
         return <Notepad content={readmeContent} />
       case 'minesweeper':
         return <Minesweeper />
+      case 'snake':
+        return <Snake />
+      case 'paint':
+        return <Paint />
       case 'games':
         return <GamesMenu onOpenGame={(game) => handleIconDoubleClick(game)} />
       default:
@@ -68,7 +76,7 @@ export function Desktop() {
     <div 
       className="relative w-full h-screen overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: "url('/images/bliss.jpg')",
+        backgroundImage: "url('/images/background.jpg')",
         backgroundColor: '#3a6ea5', // Fallback XP blue
         backgroundSize: 'cover',
       }}
