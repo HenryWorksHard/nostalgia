@@ -1,39 +1,88 @@
 'use client'
 
+import { useRef, useEffect, useState } from 'react'
 import { useAppStore } from '@/stores/appStore'
 
 export function VideoScreen() {
   const { setPhase, isMuted, toggleMute } = useAppStore()
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
+  const [showContinue, setShowContinue] = useState(false)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted
+    }
+  }, [isMuted])
+
+  const handleVideoEnd = () => {
+    setShowContinue(true)
+  }
+
+  const handleContinue = () => {
+    setPhase('desktop')
+  }
+
+  // Check if video source exists (will be replaced with actual video)
+  const videoSrc = '/video/intro.mp4'
 
   return (
-    <div className="w-full h-screen bg-black flex flex-col items-center justify-center relative">
-      {/* Video placeholder - replace with actual video */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="text-gray-600 text-lg">
-          {/* Placeholder for video - add actual video element here */}
-          <div className="w-[640px] h-[360px] bg-gray-900 flex items-center justify-center border border-gray-800">
-            <span className="text-gray-500">🎬 Video placeholder</span>
+    <div className="w-full h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Video */}
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        playsInline
+        muted={isMuted}
+        onLoadedData={() => setIsVideoLoaded(true)}
+        onEnded={handleVideoEnd}
+        onError={() => {
+          // If video fails to load, show continue button immediately
+          setShowContinue(true)
+        }}
+      />
+
+      {/* Fallback/Placeholder when no video */}
+      {!isVideoLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black">
+          <div className="text-center">
+            <div className="text-6xl mb-4">📼</div>
+            <p className="text-gray-500 text-sm">Loading video...</p>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Controls */}
-      <div className="absolute bottom-6 right-6 flex gap-4">
+      {/* Controls - always visible */}
+      <div className="absolute bottom-6 right-6 flex gap-4 z-10">
         <button
           onClick={toggleMute}
-          className="text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+          className="text-gray-400 hover:text-white transition-colors flex items-center gap-1 bg-black/50 px-3 py-2 rounded"
         >
           <span>{isMuted ? '🔇' : '🔊'}</span>
           <span className="text-sm">{isMuted ? 'UNMUTE' : 'MUTE'}</span>
         </button>
         <button
-          onClick={() => setPhase('desktop')}
-          className="text-gray-400 hover:text-white transition-colors flex items-center gap-1"
+          onClick={handleContinue}
+          className="text-gray-400 hover:text-white transition-colors flex items-center gap-1 bg-black/50 px-3 py-2 rounded"
         >
           <span>⏭️</span>
           <span className="text-sm">SKIP</span>
         </button>
       </div>
+
+      {/* Continue button after video ends */}
+      {showContinue && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-20">
+          <button
+            onClick={handleContinue}
+            className="text-2xl text-white hover:text-green-400 transition-colors animate-pulse"
+          >
+            [ CLICK TO CONTINUE ]
+          </button>
+        </div>
+      )}
     </div>
   )
 }
