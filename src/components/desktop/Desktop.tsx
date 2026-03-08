@@ -8,6 +8,7 @@ import { Minesweeper } from '../apps/Minesweeper'
 import { Snake } from '../apps/Snake'
 import { Paint } from '../apps/Paint'
 import { RecycleBin } from '../apps/RecycleBin'
+import { Socials } from '../apps/Socials'
 import { useWindowStore } from '@/stores/windowStore'
 import { useAppStore } from '@/stores/appStore'
 
@@ -70,6 +71,8 @@ export function Desktop() {
         return <GamesMenu onOpenGame={(game) => handleIconDoubleClick(game)} />
       case 'recycle':
         return <RecycleBin />
+      case 'socials':
+        return <Socials />
       default:
         return <div className="p-4">Coming soon...</div>
     }
