@@ -18,6 +18,7 @@ interface WindowStore {
   windows: WindowState[]
   activeWindowId: string | null
   highestZIndex: number
+  cascadeOffset: number // Track cascade position
   
   openWindow: (window: Omit<WindowState, 'zIndex' | 'isMinimized' | 'isMaximized'>) => void
   closeWindow: (id: string) => void
@@ -29,26 +30,34 @@ interface WindowStore {
   updateWindowSize: (id: string, width: number, height: number) => void
 }
 
+// Windows XP cascade offset (pixels)
+const CASCADE_STEP = 26
+const CASCADE_MAX = 8 // Reset after this many windows
+const CASCADE_START_X = 80
+const CASCADE_START_Y = 40
+
 export const useWindowStore = create<WindowStore>((set, get) => ({
   windows: [],
   activeWindowId: null,
   highestZIndex: 100,
+  cascadeOffset: 0,
 
   openWindow: (windowData) => {
-    const { windows, highestZIndex } = get()
-    const existingWindow = windows.find(w => w.id === windowData.id)
+    const { windows, highestZIndex, cascadeOffset } = get()
     
-    if (existingWindow) {
-      // Focus existing window
-      get().focusWindow(windowData.id)
-      if (existingWindow.isMinimized) {
-        get().restoreWindow(windowData.id)
-      }
-      return
-    }
+    // Calculate cascade position (Windows XP style)
+    const currentSlot = cascadeOffset % CASCADE_MAX
+    const cascadeX = CASCADE_START_X + (currentSlot * CASCADE_STEP)
+    const cascadeY = CASCADE_START_Y + (currentSlot * CASCADE_STEP)
+    
+    // Generate unique ID for each instance
+    const instanceId = `${windowData.id}-${Date.now()}`
 
     const newWindow: WindowState = {
       ...windowData,
+      id: instanceId,
+      x: cascadeX,
+      y: cascadeY,
       zIndex: highestZIndex + 1,
       isMinimized: false,
       isMaximized: false,
@@ -58,6 +67,7 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
       windows: [...windows, newWindow],
       activeWindowId: newWindow.id,
       highestZIndex: highestZIndex + 1,
+      cascadeOffset: cascadeOffset + 1,
     })
   },
 
