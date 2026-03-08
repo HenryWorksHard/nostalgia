@@ -30,7 +30,7 @@ const appConfigs: Record<string, { title: string; icon: string; width: number; h
   snake: { title: 'Snake - $DREAMCORE Edition', icon: '🐍', width: 420, height: 480 },
   paint: { title: 'Paint - $DREAMCORE', icon: '🎨', width: 600, height: 500 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
-  socials: { title: 'Socials', icon: '💬', width: 300, height: 250 },
+  socials: { title: 'socials.exe - Follow $DREAMCORE', icon: '💬', width: 350, height: 320 },
   gallery: { title: 'Gallery', icon: '🖼️', width: 600, height: 500 },
   recycle: { title: 'Recycle Bin - Deleted Dreams', icon: '🗑️', width: 500, height: 450 },
 }

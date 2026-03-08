@@ -1,88 +1,42 @@
 'use client'
 
-// XP-style X (Twitter) icon - pixelated retro look
-function XIcon() {
-  return (
-    <svg 
-      width="48" 
-      height="48" 
-      viewBox="0 0 48 48" 
-      className="drop-shadow-md"
-      style={{ imageRendering: 'pixelated' }}
-    >
-      {/* Outer border - dark */}
-      <rect x="8" y="8" width="32" height="32" fill="#1a1a2e" rx="4" />
-      {/* Inner background - slightly lighter */}
-      <rect x="10" y="10" width="28" height="28" fill="#16213e" rx="3" />
-      {/* X letter - white with slight 3D effect */}
-      <path 
-        d="M16 14 L22 22 L16 32 L19 32 L24 25 L29 32 L32 32 L26 22 L32 14 L29 14 L24 20 L19 14 Z" 
-        fill="#ffffff"
-      />
-      {/* Highlight on top-left for XP 3D effect */}
-      <rect x="10" y="10" width="28" height="2" fill="#2a4a7a" opacity="0.5" rx="1" />
-      <rect x="10" y="10" width="2" height="28" fill="#2a4a7a" opacity="0.3" rx="1" />
-    </svg>
-  )
-}
-
-interface SocialLink {
-  name: string
-  icon: React.ReactNode
-  url: string | null
-  label: string
-}
-
-const socialLinks: SocialLink[] = [
-  { 
-    name: 'X (Twitter)', 
-    icon: <XIcon />, 
-    url: null, // Link coming soon
-    label: 'Follow us on X'
-  },
-]
-
 export function Socials() {
-  const handleClick = (url: string | null) => {
-    if (url) {
-      window.open(url, '_blank')
-    }
+  const handleXClick = () => {
+    // URL coming soon
+    // window.open('https://x.com/dreamcore', '_blank')
   }
 
   return (
-    <div className="flex flex-col h-full bg-[#ece9d8]">
-      {/* Title bar content area */}
-      <div className="p-4 flex-1">
-        <div className="bg-white border-2 border-[#848484] rounded p-4 shadow-inner">
-          <h2 className="text-sm font-bold text-[#003087] mb-4 border-b border-[#848484] pb-2">
-            Connect with $DREAMCORE
-          </h2>
-          
-          <div className="flex flex-col gap-3">
-            {socialLinks.map((social) => (
-              <button
-                key={social.name}
-                onClick={() => handleClick(social.url)}
-                className="flex items-center gap-3 p-2 hover:bg-[#316ac5] hover:text-white rounded transition-colors group"
-              >
-                <div className="w-12 h-12 flex items-center justify-center bg-[#ece9d8] rounded border border-[#848484] group-hover:border-white">
-                  {social.icon}
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-sm">{social.name}</div>
-                  <div className="text-xs text-[#808080] group-hover:text-white">
-                    {social.label}
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
+    <div className="flex flex-col h-full bg-[#c0c0c0] items-center justify-center p-6">
+      {/* Globe Icon */}
+      <div className="mb-6">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#4a9eda" strokeWidth="2" />
+          <ellipse cx="24" cy="24" rx="8" ry="20" fill="none" stroke="#4a9eda" strokeWidth="2" />
+          <line x1="4" y1="24" x2="44" y2="24" stroke="#4a9eda" strokeWidth="2" />
+          <ellipse cx="24" cy="14" rx="16" ry="6" fill="none" stroke="#4a9eda" strokeWidth="1.5" />
+          <ellipse cx="24" cy="34" rx="16" ry="6" fill="none" stroke="#4a9eda" strokeWidth="1.5" />
+        </svg>
       </div>
 
-      {/* Status bar */}
-      <div className="bg-[#ece9d8] border-t border-[#848484] px-2 py-1 text-xs text-[#808080]">
-        Click to open in new window
+      {/* Title */}
+      <h1 className="text-2xl font-bold text-[#1a1a1a] mb-8">
+        $DREAMCORE Socials
+      </h1>
+
+      {/* X Link */}
+      <button
+        onClick={handleXClick}
+        className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-2 mb-4 hover:bg-[#e8e8e8] active:border-[#404040] shadow-[inset_-1px_-1px_0_#404040,inset_1px_1px_0_#fff]"
+      >
+        <span className="text-lg">x</span>
+        <span className="text-[#0066cc] font-medium">@dreamcoreXP on X</span>
+      </button>
+
+      {/* Tagline */}
+      <div className="mt-8 text-center text-[#404040] text-sm">
+        <p>Remember the feeling</p>
+        <p>The un-vampable dream coin</p>
       </div>
     </div>
   )
