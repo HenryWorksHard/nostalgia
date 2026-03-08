@@ -9,6 +9,7 @@ import { Snake } from '../apps/Snake'
 import { Paint } from '../apps/Paint'
 import { RecycleBin } from '../apps/RecycleBin'
 import { Socials } from '../apps/Socials'
+import { Gallery } from '../apps/Gallery'
 import { useWindowStore } from '@/stores/windowStore'
 import { useAppStore } from '@/stores/appStore'
 
@@ -31,7 +32,7 @@ const appConfigs: Record<string, { title: string; icon: string; width: number; h
   paint: { title: 'Paint - $DREAMCORE', icon: '🎨', width: 600, height: 500 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
   socials: { title: 'socials.exe - Follow $DREAMCORE', icon: '💬', width: 350, height: 320 },
-  gallery: { title: 'Gallery', icon: '🖼️', width: 600, height: 500 },
+  gallery: { title: 'The Meme Museum - Gallery', icon: '🖼️', width: 550, height: 500 },
   recycle: { title: 'Recycle Bin - Deleted Dreams', icon: '🗑️', width: 500, height: 450 },
 }
 
@@ -73,6 +74,8 @@ export function Desktop() {
         return <RecycleBin />
       case 'socials':
         return <Socials />
+      case 'gallery':
+        return <Gallery />
       default:
         return <div className="p-4">Coming soon...</div>
     }
