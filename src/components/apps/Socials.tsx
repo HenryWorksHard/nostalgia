@@ -36,7 +36,6 @@ export function Socials() {
       {/* Tagline */}
       <div className="mt-8 text-center text-[#404040] text-sm">
         <p>Remember the feeling</p>
-        <p>The un-vampable dream coin</p>
       </div>
     </div>
   )

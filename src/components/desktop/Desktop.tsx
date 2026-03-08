@@ -182,7 +182,6 @@ the feeling of your first computer.
 try to explain this to someone who wasn't there.
 go ahead. we'll wait.
 
-you can't vamp dreamcore.
 you can't fake memories.
 you either remember or you don't.
 
