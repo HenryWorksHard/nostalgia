@@ -21,16 +21,13 @@ const coinCollection: CoinItem[] = [
   // pump.fun Era
   { id: '5', ticker: '$MOTHER', name: 'Mother Iggy', category: 'pump.fun Era', description: "Iggy Azalea's coin. Started the celebrity meta on Solana.", image: 'https://dd.dexscreener.com/ds-data/tokens/solana/3S8qX1MsMqRbiwKg2cQyx7nis1oHMgaCuc9c4VfvVdPN.png' },
   { id: '6', ticker: '$DADDY', name: 'Daddy Tate', category: 'pump.fun Era', description: "Andrew Tate's response to MOTHER. The battle of the celebrities.", image: 'https://dd.dexscreener.com/ds-data/tokens/solana/4Cnk9EPnW5ixfLZatCPJjDB1PUtcRpVVgTQukm9epump.png' },
-  { id: '7', ticker: '$HAWK', name: 'Hawk Tuah', category: 'pump.fun Era', description: 'Hailey Welch "Hawk Tuah girl". Launched and rugged spectacularly. A cautionary tale.', image: '/images/hawk.png' },
-  { id: '8', ticker: '$PNUT', name: 'Peanut the Squirrel', category: 'pump.fun Era', description: 'Went viral after the squirrel was euthanized by NY officials. RIP Peanut.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump.png' },
+  { id: '7', ticker: '$PNUT', name: 'Peanut the Squirrel', category: 'pump.fun Era', description: 'Went viral after the squirrel was euthanized by NY officials. RIP Peanut.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump.png' },
   { id: '9', ticker: '$GOAT', name: 'Goatseus Maximus', category: 'pump.fun Era', description: 'AI-generated via Truth Terminal. Started the entire AI agent meta. Narratively significant.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump.png' },
   { id: '10', ticker: '$FARTCOIN', name: 'Fartcoin', category: 'pump.fun Era', description: 'Exactly what it sounds like. Somehow did numbers. Never underestimate degen energy.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump.png' },
   
   // Cult/Community Plays
-  { id: '11', ticker: '$SLERF', name: 'Slerf', category: 'Cult Plays', description: 'Dev accidentally burned the LP. The mistake became the meme. Community rallied.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/7BgBvyjrZX1YKz4oh9mjb8ZScatkkwb8DzFx7LoiVkM3.png' },
-  { id: '12', ticker: '$BODEN', name: 'Jeo Boden', category: 'Cult Plays', description: 'Biden political coin. Election season speculation.', image: '/images/boden.jpg' },
-  { id: '13', ticker: '$TREMP', name: 'Doland Tremp', category: 'Cult Plays', description: 'Trump political coin. The other side of the election trade.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/FU1q8vJpZNUrmqsciSjp8bAKKidGsLmouB8CBdf8TKQv.png' },
-  { id: '14', ticker: '$BRETT', name: 'Brett', category: 'Cult Plays', description: "Boy's Club character. Bigger on Base but Solana had its version too.", image: '/images/brett.jpg' },
+  { id: '10', ticker: '$SLERF', name: 'Slerf', category: 'Cult Plays', description: 'Dev accidentally burned the LP. The mistake became the meme. Community rallied.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/7BgBvyjrZX1YKz4oh9mjb8ZScatkkwb8DzFx7LoiVkM3.png' },
+  { id: '11', ticker: '$TREMP', name: 'Doland Tremp', category: 'Cult Plays', description: 'Trump political coin. The other side of the election trade.', image: 'https://dd.dexscreener.com/ds-data/tokens/solana/FU1q8vJpZNUrmqsciSjp8bAKKidGsLmouB8CBdf8TKQv.png' },
 ]
 
 export function Gallery() {
