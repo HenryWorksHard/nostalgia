@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useAppStore } from '@/stores/appStore'
+import { CONTRACT_ADDRESS } from '@/config/contract'
 
 export function Landing() {
   const { setPhase } = useAppStore()
@@ -59,7 +60,7 @@ export function Landing() {
 
       {/* Contract Address */}
       <p className="text-green-500 mt-8 text-xs font-mono">
-        CA: [CONTRACT ADDRESS HERE]
+        CA: {CONTRACT_ADDRESS}
       </p>
     </div>
   )

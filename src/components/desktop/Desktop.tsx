@@ -10,10 +10,13 @@ import { Paint } from '../apps/Paint'
 import { RecycleBin } from '../apps/RecycleBin'
 import { Socials } from '../apps/Socials'
 import { Gallery } from '../apps/Gallery'
+import { ContractAddress } from '../apps/ContractAddress'
 import { useWindowStore } from '@/stores/windowStore'
 import { useAppStore } from '@/stores/appStore'
+import { CONTRACT_ADDRESS } from '@/config/contract'
 
 const desktopIcons = [
+  { id: 'ca', icon: '📋', label: 'CA.exe' },
   { id: 'manifesto', icon: '📜', label: 'manifesto.exe' },
   { id: 'games', icon: '🎮', label: 'tradition_games' },
   { id: 'chart', icon: '📈', label: 'chart.exe' },
@@ -24,6 +27,7 @@ const desktopIcons = [
 ]
 
 const appConfigs: Record<string, { title: string; icon: string; width: number; height: number }> = {
+  ca: { title: 'CA.exe - Contract Address', icon: '📋', width: 450, height: 400 },
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
   games: { title: 'Tradition Games', icon: '🎮', width: 300, height: 200 },
@@ -58,6 +62,8 @@ export function Desktop() {
 
   const renderWindowContent = (component: string) => {
     switch (component) {
+      case 'ca':
+        return <ContractAddress />
       case 'manifesto':
         return <Notepad content={manifestoContent} />
       case 'readme':
@@ -258,7 +264,7 @@ Welcome back to Tradition.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-CA: [CONTRACT ADDRESS HERE]
+CA: ${CONTRACT_ADDRESS}
 `
 
 const readmeContent = `README.txt

@@ -4,6 +4,7 @@ import { useWindowStore } from '@/stores/windowStore'
 import { useAppStore } from '@/stores/appStore'
 
 const menuItems = [
+  { id: 'ca', icon: '📋', label: 'Contract Address' },
   { id: 'manifesto', icon: '📜', label: 'manifesto.exe' },
   { id: 'games', icon: '🎮', label: 'Games', hasSubmenu: true },
   { id: 'minesweeper', icon: '💣', label: 'Minesweeper', indent: true },
@@ -19,6 +20,7 @@ const menuItems = [
 ]
 
 const appConfigs: Record<string, { title: string; icon: string; width: number; height: number }> = {
+  ca: { title: 'CA.exe - Contract Address', icon: '📋', width: 450, height: 400 },
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
   games: { title: 'Tradition Games', icon: '🎮', width: 300, height: 200 },
