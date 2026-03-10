@@ -2,8 +2,7 @@
 
 export function Socials() {
   const handleXClick = () => {
-    // URL coming soon
-    // window.open('https://x.com/tradition', '_blank')
+    window.open('https://x.com/i/communities/2031358176390684814', '_blank')
   }
 
   return (
@@ -27,10 +26,9 @@ export function Socials() {
       {/* X Link */}
       <button
         onClick={handleXClick}
-        className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-2 mb-4 hover:bg-[#e8e8e8] active:border-[#404040] shadow-[inset_-1px_-1px_0_#404040,inset_1px_1px_0_#fff]"
+        className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-3 mb-4 hover:bg-[#e8e8e8] active:border-[#404040] shadow-[inset_-1px_-1px_0_#404040,inset_1px_1px_0_#fff]"
       >
-        <span className="text-lg">x</span>
-        <span className="text-[#0066cc] font-medium">@traditionXP on X</span>
+        <span className="text-xl font-bold">𝕏</span>
       </button>
 
       {/* Tagline */}
