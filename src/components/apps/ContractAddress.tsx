@@ -25,13 +25,13 @@ export function ContractAddress() {
   }
 
   const handleDexScreener = () => {
-    if (IS_LAUNCHED && CONTRACT_ADDRESS !== '[CONTRACT ADDRESS HERE]') {
+    if (IS_LAUNCHED) {
       window.open(`https://dexscreener.com/solana/${CONTRACT_ADDRESS}`, '_blank')
     }
   }
 
   const handleBirdeye = () => {
-    if (IS_LAUNCHED && CONTRACT_ADDRESS !== '[CONTRACT ADDRESS HERE]') {
+    if (IS_LAUNCHED) {
       window.open(`https://birdeye.so/token/${CONTRACT_ADDRESS}?chain=solana`, '_blank')
     }
   }
