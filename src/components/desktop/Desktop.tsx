@@ -264,22 +264,28 @@ CA: [CONTRACT ADDRESS HERE]
 const readmeContent = `README.txt
 ──────────
 
-if you're reading this, you're early. or late.
-doesn't matter.
-you're here now and that's what counts.
+2024 was the golden year.
 
-$TRADITION is for those who remember.
-remember what? you already know.
+WIF went from nothing to billions. A dog in a hat on the Vegas Sphere.
+BONK revived Solana when everyone left it for dead.
+PEPE became a billion dollar frog in three weeks.
 
-the WIF hat on the Vegas Sphere.
-the BONK Christmas airdrop.
-the PEPE billion dollar frog.
+communities that held together.
+diamond hands that meant something.
+memes that became movements.
 
-try to explain 2024 memecoins to someone who wasn't there.
-go ahead. we'll wait.
+then came 2025.
+100 second hold times. bots everywhere. trust destroyed.
+the magic died.
 
-you can't fake conviction.
-you either held or you didn't.
+but we remember.
 
-welcome back.
+$TRADITION is for the ones who miss what memecoins used to be.
+not the rugs. not the snipers. not the cabals.
+the conviction. the community. the belief.
+
+the old way worked.
+it's time to go back.
+
+return to tradition.
 `
