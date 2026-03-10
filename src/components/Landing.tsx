@@ -26,11 +26,11 @@ export function Landing() {
       {/* Preload video in hidden element */}
       <link rel="preload" href="/video/intro.mp4" as="video" type="video/mp4" />
       
-      {/* TRADITION Logo */}
+      {/* Tradition Logo */}
       <div className="mb-16 text-center">
         <img 
           src="/images/tradition-logo.png" 
-          alt="TRADITION" 
+          alt="Tradition" 
           className="h-24 md:h-32 mx-auto"
         />
       </div>

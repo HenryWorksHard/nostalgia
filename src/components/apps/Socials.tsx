@@ -21,7 +21,7 @@ export function Socials() {
 
       {/* Title */}
       <h1 className="text-2xl font-bold text-[#1a1a1a] mb-8">
-        $TRADITION Socials
+        $Tradition Socials
       </h1>
 
       {/* X Link */}

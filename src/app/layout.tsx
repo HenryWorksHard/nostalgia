@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "$TRADITION - Remember When",
+  title: "$Tradition - Remember When",
   description: "A trip back to simpler times. Windows XP memecoin experience.",
   icons: {
     icon: "/favicon.ico",
