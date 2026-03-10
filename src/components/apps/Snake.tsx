@@ -148,7 +148,7 @@ export function Snake() {
           {gameOver ? '😵' : isPlaying ? '🙂' : '🎮'}
         </button>
         <div className="bg-black text-green-500 font-mono text-xl px-2 py-1 min-w-[60px] text-center">
-          $DREAM
+          $TRAD
         </div>
       </div>
 

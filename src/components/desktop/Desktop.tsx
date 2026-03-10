@@ -15,7 +15,7 @@ import { useAppStore } from '@/stores/appStore'
 
 const desktopIcons = [
   { id: 'manifesto', icon: '📜', label: 'manifesto.exe' },
-  { id: 'games', icon: '🎮', label: 'dreamcore_games' },
+  { id: 'games', icon: '🎮', label: 'tradition_games' },
   { id: 'chart', icon: '📈', label: 'chart.exe' },
   { id: 'gallery', icon: '🖼️', label: 'gallery.jpg' },
   { id: 'readme', icon: '📝', label: 'README.txt' },
@@ -26,13 +26,13 @@ const desktopIcons = [
 const appConfigs: Record<string, { title: string; icon: string; width: number; height: number }> = {
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
-  games: { title: 'Dreamcore Games', icon: '🎮', width: 300, height: 200 },
-  minesweeper: { title: 'Minesweeper - $DREAMCORE Edition', icon: '💣', width: 320, height: 420 },
-  snake: { title: 'Snake - $DREAMCORE Edition', icon: '🐍', width: 420, height: 480 },
-  paint: { title: 'Paint - $DREAMCORE', icon: '🎨', width: 600, height: 500 },
+  games: { title: 'Tradition Games', icon: '🎮', width: 300, height: 200 },
+  minesweeper: { title: 'Minesweeper - $TRADITION Edition', icon: '💣', width: 320, height: 420 },
+  snake: { title: 'Snake - $TRADITION Edition', icon: '🐍', width: 420, height: 480 },
+  paint: { title: 'Paint - $TRADITION', icon: '🎨', width: 600, height: 500 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
-  socials: { title: 'socials.exe - Follow $DREAMCORE', icon: '💬', width: 350, height: 320 },
-  gallery: { title: 'The Meme Museum - Gallery', icon: '🖼️', width: 550, height: 500 },
+  socials: { title: 'socials.exe - Follow $TRADITION', icon: '💬', width: 350, height: 320 },
+  gallery: { title: 'Hall of Tradition - 2024 Legends', icon: '🖼️', width: 600, height: 550 },
   recycle: { title: 'Recycle Bin - Deleted Dreams', icon: '🗑️', width: 500, height: 450 },
 }
 
@@ -141,7 +141,7 @@ function GamesMenu({ onOpenGame }: { onOpenGame: (game: string) => void }) {
   )
 }
 
-const manifestoContent = `DREAMCORE - THE MANIFESTO
+const manifestoContent = `TRADITION - THE MANIFESTO
 ══════════════════════════════════
 
 We remember.
@@ -153,7 +153,7 @@ Before notifications ruled us.
 Before algorithms decided what we see.
 Before everything became "content."
 
-$DREAMCORE isn't just a token.
+$TRADITION isn't just a token.
 It's a time machine.
 It's the feeling of simpler times.
 It's proof that sometimes, going back is moving forward.
@@ -175,7 +175,7 @@ if you're reading this, you're early. or late.
 doesn't matter.
 you're here now and that's what counts.
 
-$DREAMCORE is for those who remember.
+$TRADITION is for those who remember.
 remember what? you already know.
 
 the dial-up sound.

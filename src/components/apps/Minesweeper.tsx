@@ -178,7 +178,7 @@ export function Minesweeper() {
           {gameOver ? '😵' : won ? '😎' : '🙂'}
         </button>
         <div className="bg-black text-red-500 font-mono text-xl px-2 py-1 min-w-[50px] text-center">
-          $DREAM
+          $TRAD
         </div>
       </div>
 

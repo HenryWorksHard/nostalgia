@@ -3,7 +3,7 @@
 export function Socials() {
   const handleXClick = () => {
     // URL coming soon
-    // window.open('https://x.com/dreamcore', '_blank')
+    // window.open('https://x.com/tradition', '_blank')
   }
 
   return (
@@ -21,7 +21,7 @@ export function Socials() {
 
       {/* Title */}
       <h1 className="text-2xl font-bold text-[#1a1a1a] mb-8">
-        $DREAMCORE Socials
+        $TRADITION Socials
       </h1>
 
       {/* X Link */}
@@ -30,7 +30,7 @@ export function Socials() {
         className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-2 mb-4 hover:bg-[#e8e8e8] active:border-[#404040] shadow-[inset_-1px_-1px_0_#404040,inset_1px_1px_0_#fff]"
       >
         <span className="text-lg">x</span>
-        <span className="text-[#0066cc] font-medium">@dreamcoreXP on X</span>
+        <span className="text-[#0066cc] font-medium">@traditionXP on X</span>
       </button>
 
       {/* Tagline */}
