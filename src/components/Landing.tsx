@@ -1,21 +1,22 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useAppStore } from '@/stores/appStore'
 
 export function Landing() {
   const { setPhase } = useAppStore()
+  const videoRef = useRef<HTMLVideoElement>(null)
 
-  // Preload video and desktop background while on landing page
+  // Aggressively preload video on page load
   useEffect(() => {
-    const video = document.createElement('video')
-    video.preload = 'auto'
-    video.src = '/video/intro.mp4'
-    video.load()
-    
     // Preload desktop background
     const img = new Image()
     img.src = '/images/bliss.jpg'
+    
+    // Force video to buffer by loading it
+    if (videoRef.current) {
+      videoRef.current.load()
+    }
   }, [])
 
   return (
@@ -23,8 +24,19 @@ export function Landing() {
       className="w-full h-screen bg-black flex flex-col items-center justify-center cursor-pointer"
       onClick={() => setPhase('video')}
     >
-      {/* Preload video in hidden element */}
+      {/* Hidden video element to force preloading */}
+      <video 
+        ref={videoRef}
+        src="/video/intro.mp4" 
+        preload="auto"
+        muted
+        playsInline
+        className="hidden"
+      />
+      
+      {/* Preload hints */}
       <link rel="preload" href="/video/intro.mp4" as="video" type="video/mp4" />
+      <link rel="preload" href="/images/bliss.jpg" as="image" />
       
       {/* Tradition Logo */}
       <div className="mb-16 text-center">

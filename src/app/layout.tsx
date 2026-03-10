@@ -16,6 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload video as early as possible */}
+        <link rel="preload" href="/video/intro.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/images/bliss.jpg" as="image" />
+      </head>
       <body className="antialiased overflow-hidden">
         {children}
       </body>
