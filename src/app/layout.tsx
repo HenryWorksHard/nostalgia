@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: "$Tradition - Remember When",
   description: "A trip back to simpler times. Windows XP memecoin experience.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "64x64" },
+      { url: "/favicon-128.png", sizes: "128x128", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
