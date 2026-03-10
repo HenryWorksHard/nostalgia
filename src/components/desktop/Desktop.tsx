@@ -287,5 +287,5 @@ the conviction. the community. the belief.
 the old way worked.
 it's time to go back.
 
-return to tradition.
+return to Tradition.
 `
