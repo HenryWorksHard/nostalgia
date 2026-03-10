@@ -3,24 +3,23 @@
 interface RecycleItem {
   ticker: string
   name: string
-  ath: string
-  current: string
-  downPercent: string
+  athMcap: string
+  currentMcap: string
   athDate: string
 }
 
 const recycleItems: RecycleItem[] = [
-  { ticker: '$WIF', name: 'dogwifhat', ath: '$4.83', current: '$0.17', downPercent: '-96%', athDate: 'Mar 2024' },
-  { ticker: '$BONK', name: 'Bonk', ath: '$0.0000582', current: '$0.00000606', downPercent: '-90%', athDate: 'Nov 2024' },
-  { ticker: '$POPCAT', name: 'Popcat', ath: '$2.05', current: '$0.052', downPercent: '-97%', athDate: 'Nov 2024' },
-  { ticker: '$MEW', name: 'cat in a dogs world', ath: '$0.0129', current: '$0.00061', downPercent: '-95%', athDate: 'Nov 2024' },
-  { ticker: '$MOTHER', name: 'Mother Iggy', ath: '$0.23', current: '$0.0012', downPercent: '-99%', athDate: 'Jun 2024' },
-  { ticker: '$DADDY', name: 'Daddy Tate', ath: '$0.29', current: '$0.0062', downPercent: '-98%', athDate: 'Jun 2024' },
-  { ticker: '$PNUT', name: 'Peanut the Squirrel', ath: '$2.44', current: '$0.046', downPercent: '-98%', athDate: 'Nov 2024' },
-  { ticker: '$GOAT', name: 'Goatseus Maximus', ath: '$1.35', current: '$0.019', downPercent: '-99%', athDate: 'Nov 2024' },
-  { ticker: '$FARTCOIN', name: 'Fartcoin', ath: '$2.48', current: '$0.16', downPercent: '-94%', athDate: 'Jan 2025' },
-  { ticker: '$SLERF', name: 'Slerf', ath: '$1.30', current: '$0.0042', downPercent: '-99.7%', athDate: 'Mar 2024' },
-  { ticker: '$TREMP', name: 'Doland Tremp', ath: '$1.51', current: '$0.0059', downPercent: '-99.6%', athDate: '2024' },
+  { ticker: '$WIF', name: 'dogwifhat', athMcap: '$4.8B', currentMcap: '$172M', athDate: 'Mar 2024' },
+  { ticker: '$BONK', name: 'Bonk', athMcap: '$5.1B', currentMcap: '$533M', athDate: 'Nov 2024' },
+  { ticker: '$POPCAT', name: 'Popcat', athMcap: '$2.0B', currentMcap: '$51M', athDate: 'Nov 2024' },
+  { ticker: '$MEW', name: 'cat in a dogs world', athMcap: '$1.1B', currentMcap: '$54M', athDate: 'Nov 2024' },
+  { ticker: '$MOTHER', name: 'Mother Iggy', athMcap: '$222M', currentMcap: '$1.1M', athDate: 'Jun 2024' },
+  { ticker: '$DADDY', name: 'Daddy Tate', athMcap: '$173M', currentMcap: '$3.7M', athDate: 'Jun 2024' },
+  { ticker: '$PNUT', name: 'Peanut the Squirrel', athMcap: '$2.4B', currentMcap: '$46M', athDate: 'Nov 2024' },
+  { ticker: '$GOAT', name: 'Goatseus Maximus', athMcap: '$1.3B', currentMcap: '$19M', athDate: 'Nov 2024' },
+  { ticker: '$FARTCOIN', name: 'Fartcoin', athMcap: '$2.5B', currentMcap: '$158M', athDate: 'Jan 2025' },
+  { ticker: '$SLERF', name: 'Slerf', athMcap: '$800M', currentMcap: '$2.1M', athDate: 'Mar 2024' },
+  { ticker: '$TREMP', name: 'Doland Tremp', athMcap: '$151M', currentMcap: '$592K', athDate: '2024' },
 ]
 
 export function RecycleBin() {
@@ -37,16 +36,15 @@ export function RecycleBin() {
       {/* Title */}
       <div className="bg-[#ffffc8] border-b border-[#808080] p-2 text-xs">
         <p className="font-bold">🗑️ Deleted Gains - 2024 Memecoins</p>
-        <p className="text-[#808080]">All-Time Highs vs Now. RIP.</p>
+        <p className="text-[#808080]">All-Time High Market Caps vs Now. RIP.</p>
       </div>
 
       {/* Column Headers */}
-      <div className="grid grid-cols-[80px_1fr_90px_90px_70px] bg-[#ece9d8] border-b border-[#848484] text-xs font-semibold">
+      <div className="grid grid-cols-[80px_1fr_100px_100px] bg-[#ece9d8] border-b border-[#848484] text-xs font-semibold">
         <div className="px-2 py-1 border-r border-[#848484]">Ticker</div>
         <div className="px-2 py-1 border-r border-[#848484]">Name</div>
-        <div className="px-2 py-1 border-r border-[#848484]">ATH</div>
-        <div className="px-2 py-1 border-r border-[#848484]">Now</div>
-        <div className="px-2 py-1">Loss</div>
+        <div className="px-2 py-1 border-r border-[#848484]">ATH MCap</div>
+        <div className="px-2 py-1">Now</div>
       </div>
 
       {/* Items List */}
@@ -54,7 +52,7 @@ export function RecycleBin() {
         {recycleItems.map((item, index) => (
           <div 
             key={index}
-            className="grid grid-cols-[80px_1fr_90px_90px_70px] text-xs border-b border-[#e5e5e5] hover:bg-[#316ac5] hover:text-white group cursor-default"
+            className="grid grid-cols-[80px_1fr_100px_100px] text-xs border-b border-[#e5e5e5] hover:bg-[#316ac5] hover:text-white group cursor-default"
           >
             <div className="px-2 py-1.5 font-bold text-[#316ac5] group-hover:text-white truncate">
               {item.ticker}
@@ -63,13 +61,10 @@ export function RecycleBin() {
               {item.name}
             </div>
             <div className="px-2 py-1.5 text-[#008000] group-hover:text-white font-mono">
-              {item.ath}
+              {item.athMcap}
             </div>
-            <div className="px-2 py-1.5 text-[#808080] group-hover:text-white font-mono">
-              {item.current}
-            </div>
-            <div className="px-2 py-1.5 text-[#cc0000] group-hover:text-white font-bold">
-              {item.downPercent}
+            <div className="px-2 py-1.5 text-[#cc0000] group-hover:text-white font-mono">
+              {item.currentMcap}
             </div>
           </div>
         ))}
