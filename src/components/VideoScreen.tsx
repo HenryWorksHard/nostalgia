@@ -9,6 +9,12 @@ export function VideoScreen() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [showContinue, setShowContinue] = useState(false)
 
+  // Preload desktop background so it's ready when user skips
+  useEffect(() => {
+    const img = new Image()
+    img.src = '/images/bliss.jpg'
+  }, [])
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.muted = isMuted

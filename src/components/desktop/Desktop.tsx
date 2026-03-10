@@ -85,7 +85,7 @@ export function Desktop() {
     <div 
       className="relative w-full h-screen overflow-hidden bg-cover bg-center"
       style={{ 
-        backgroundImage: "url('/images/background.jpg')",
+        backgroundImage: "url('/images/bliss.jpg')",
         backgroundColor: '#3a6ea5', // Fallback XP blue
         backgroundSize: 'cover',
       }}

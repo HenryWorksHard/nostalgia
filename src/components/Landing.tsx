@@ -6,12 +6,16 @@ import { useAppStore } from '@/stores/appStore'
 export function Landing() {
   const { setPhase } = useAppStore()
 
-  // Preload video while on landing page
+  // Preload video and desktop background while on landing page
   useEffect(() => {
     const video = document.createElement('video')
     video.preload = 'auto'
     video.src = '/video/intro.mp4'
     video.load()
+    
+    // Preload desktop background
+    const img = new Image()
+    img.src = '/images/bliss.jpg'
   }, [])
 
   return (
