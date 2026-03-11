@@ -19,11 +19,17 @@ export function Socials() {
         $2024 Socials
       </h1>
 
-      {/* Coming Soon */}
-      <div className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-3 mb-4 shadow-[inset_-1px_-1px_0_#404040,inset_1px_1px_0_#fff]">
+      {/* X Button */}
+      <a 
+        href="https://x.com/buy2024coin" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-3 mb-4 cursor-pointer hover:bg-[#f0f0f0] transition-colors"
+        style={{ boxShadow: 'inset -1px -1px 0 #404040, inset 1px 1px 0 #fff' }}
+      >
         <span className="text-xl font-bold">𝕏</span>
-        <span className="text-sm text-[#808080]">Coming Soon</span>
-      </div>
+        <span className="text-sm text-[#1a1a1a]">@buy2024coin</span>
+      </a>
 
       {/* Tagline */}
       <div className="mt-8 text-center text-[#404040] text-sm">
