@@ -147,7 +147,7 @@ function GamesMenu({ onOpenGame }: { onOpenGame: (game: string) => void }) {
   )
 }
 
-const manifestoContent = `Return to 2024
+const manifestoContent = `Return to Tradition
 
 
 You missed it, didn't you?
@@ -224,7 +224,7 @@ The year that changed everything. The coins that made legends. The feeling of be
 
 We can't relive 2024. But we can honor it.
 
-We can return to 2024.
+We can return to Tradition.
 
 
 CA: ${CONTRACT_ADDRESS}
@@ -258,5 +258,5 @@ for the ones who want a second chance.
 no sniping. no cabals. no ninety second exits.
 just people who actually hold.
 
-return to 2024.
+return to Tradition.
 `

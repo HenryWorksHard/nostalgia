@@ -34,7 +34,7 @@ function ComingSoonOverlay() {
 
         {/* Tagline */}
         <p className="text-gray-400 text-lg md:text-xl mb-8">
-          Return to 2024
+          Return to Tradition
         </p>
 
         {/* Animated dots */}

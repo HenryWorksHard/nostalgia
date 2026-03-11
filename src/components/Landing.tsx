@@ -55,7 +55,7 @@ export function Landing() {
 
       {/* Tagline */}
       <p className="text-gray-500 mt-4 text-sm">
-        Return to 2024
+        Return to Tradition
       </p>
 
       {/* Contract Address */}

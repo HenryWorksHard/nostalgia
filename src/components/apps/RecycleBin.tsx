@@ -73,7 +73,7 @@ export function RecycleBin() {
       {/* Info Box */}
       <div className="bg-[#ffffc8] border-t border-[#808080] p-2 text-xs">
         <p className="font-bold">These gains cannot be recovered.</p>
-        <p className="text-[#808080]">They exist only in our memories now. Return to 2024.</p>
+        <p className="text-[#808080]">They exist only in our memories now. Return to Tradition.</p>
       </div>
 
       {/* Status Bar */}
