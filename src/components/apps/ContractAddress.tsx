@@ -25,54 +25,42 @@ export function ContractAddress() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-[#0a0a1a]">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-[#1a1a2e] to-[#0a0a1a] px-4 py-3 border-b border-[#3d3d5c]">
-        <h1 className="text-[#00ff00] font-bold text-lg tracking-wide font-mono">
-          $2024 Contract Address
-        </h1>
-        <p className="text-[#808080] text-xs mt-1">
-          {IS_LAUNCHED ? 'Token is LIVE on Solana' : 'Coming Soon...'}
+    <div className="flex flex-col h-full bg-[#c0c0c0] items-center justify-center p-6">
+      {/* Icon */}
+      <div className="mb-6">
+        <span className="text-5xl">📋</span>
+      </div>
+
+      {/* Title */}
+      <h1 className="text-2xl font-bold text-[#1a1a1a] mb-8">
+        $2024 Contract Address
+      </h1>
+
+      {/* CA Display Box */}
+      <div 
+        className="flex items-center gap-2 bg-white border-2 border-[#808080] px-6 py-3 mb-4 cursor-pointer hover:bg-[#f0f0f0] transition-colors"
+        style={{ boxShadow: 'inset -1px -1px 0 #404040, inset 1px 1px 0 #fff' }}
+        onClick={handleCopy}
+        title="Click to copy"
+      >
+        <span className="text-sm font-mono text-[#1a1a1a]">{CONTRACT_ADDRESS}</span>
+      </div>
+
+      {/* Copied indicator */}
+      {copied && (
+        <p className="text-[#008000] text-sm mb-4">
+          ✓ Copied to clipboard
         </p>
+      )}
+
+      {/* Status */}
+      <div className="mt-4 text-center text-[#404040] text-sm">
+        <p>{IS_LAUNCHED ? '🟢 Live on Solana' : '🟡 Awaiting Launch'}</p>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center p-6">
-        {/* CA Display */}
-        <div className="w-full max-w-md">
-          <label className="text-[#00ff00] text-xs font-mono mb-2 block">
-            CONTRACT ADDRESS (CA):
-          </label>
-          <div 
-            className="bg-black border-2 border-[#00ff00] p-4 font-mono text-sm break-all cursor-pointer hover:bg-[#001100] transition-colors"
-            onClick={handleCopy}
-            title="Click to copy"
-          >
-            <span className="text-[#00ff00]">{CONTRACT_ADDRESS}</span>
-          </div>
-          
-          {/* Copied indicator */}
-          {copied && (
-            <p className="text-[#00ff00] text-xs font-mono mt-2 text-center">
-              ✓ Copied to clipboard
-            </p>
-          )}
-        </div>
-
-        {/* Status Indicator */}
-        <div className="mt-8 text-center">
-          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded ${IS_LAUNCHED ? 'bg-[#00ff00]/20' : 'bg-[#ffff00]/20'}`}>
-            <span className={`w-2 h-2 rounded-full ${IS_LAUNCHED ? 'bg-[#00ff00] animate-pulse' : 'bg-[#ffff00]'}`} />
-            <span className={`text-sm font-mono ${IS_LAUNCHED ? 'text-[#00ff00]' : 'text-[#ffff00]'}`}>
-              {IS_LAUNCHED ? 'LIVE ON SOLANA' : 'AWAITING LAUNCH'}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="bg-[#1a1a2e] border-t border-[#3d3d5c] px-4 py-2 text-xs text-[#808080] text-center">
-        Always verify the CA before buying • DYOR • NFA
+      {/* Tagline */}
+      <div className="mt-8 text-center text-[#404040] text-sm">
+        <p>Remember the feeling</p>
       </div>
     </div>
   )

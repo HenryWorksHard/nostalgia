@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
 import { useWindowStore, WindowState } from '@/stores/windowStore'
 
 interface WindowProps {
@@ -12,35 +11,54 @@ interface WindowProps {
 export function Window({ window: win, children }: WindowProps) {
   const { closeWindow, minimizeWindow, maximizeWindow, focusWindow, updateWindowPosition, activeWindowId } = useWindowStore()
   const [isDragging, setIsDragging] = useState(false)
-  const constraintsRef = useRef<HTMLDivElement>(null)
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
+  const [windowStart, setWindowStart] = useState({ x: 0, y: 0 })
   
   const isActive = activeWindowId === win.id
 
   if (win.isMinimized) return null
 
-  const windowStyle = win.isMaximized ? {
-    x: 0,
-    y: 0,
-    width: '100%',
-    height: 'calc(100% - 40px)', // Leave room for taskbar
-  } : {
-    x: win.x,
-    y: win.y,
-    width: win.width,
-    height: win.height,
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (win.isMaximized) return
+    e.preventDefault()
+    setIsDragging(true)
+    setDragStart({ x: e.clientX, y: e.clientY })
+    setWindowStart({ x: win.x, y: win.y })
+    focusWindow(win.id)
   }
 
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDragging) return
+    const deltaX = e.clientX - dragStart.x
+    const deltaY = e.clientY - dragStart.y
+    updateWindowPosition(win.id, windowStart.x + deltaX, windowStart.y + deltaY)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  useEffect(() => {
+    if (isDragging) {
+      window.addEventListener('mousemove', handleMouseMove)
+      window.addEventListener('mouseup', handleMouseUp)
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove)
+        window.removeEventListener('mouseup', handleMouseUp)
+      }
+    }
+  }, [isDragging, dragStart, windowStart])
+
   return (
-    <motion.div
+    <div
       className="absolute"
       style={{
         zIndex: win.zIndex,
-        ...(!win.isMaximized && { left: win.x, top: win.y, width: win.width, height: win.height }),
-        ...(win.isMaximized && { left: 0, top: 0, width: '100%', height: 'calc(100% - 40px)' }),
+        left: win.isMaximized ? 0 : win.x,
+        top: win.isMaximized ? 0 : win.y,
+        width: win.isMaximized ? '100%' : win.width,
+        height: win.isMaximized ? 'calc(100% - 40px)' : win.height,
       }}
-      drag={!win.isMaximized}
-      dragMomentum={false}
-      dragListener={false}
       onMouseDown={() => focusWindow(win.id)}
     >
       <div className={`
@@ -52,21 +70,16 @@ export function Window({ window: win, children }: WindowProps) {
         ${isActive ? '' : 'opacity-95'}
       `}>
         {/* Title Bar */}
-        <motion.div
+        <div
           className={`
-            flex items-center justify-between px-1 py-0.5 cursor-move select-none
+            flex items-center justify-between px-1 py-0.5 select-none
+            ${win.isMaximized ? 'cursor-default' : 'cursor-move'}
             ${isActive 
               ? 'bg-gradient-to-r from-[#0a246a] via-[#0a246a] to-[#a6caf0]' 
               : 'bg-gradient-to-r from-[#7a96df] via-[#7a96df] to-[#a6caf0]'
             }
           `}
-          drag={!win.isMaximized}
-          dragMomentum={false}
-          onDragStart={() => setIsDragging(true)}
-          onDragEnd={(_, info) => {
-            setIsDragging(false)
-            updateWindowPosition(win.id, win.x + info.offset.x, win.y + info.offset.y)
-          }}
+          onMouseDown={handleMouseDown}
           onDoubleClick={() => maximizeWindow(win.id)}
         >
           <div className="flex items-center gap-1">
@@ -80,30 +93,33 @@ export function Window({ window: win, children }: WindowProps) {
           <div className="flex gap-0.5">
             <button
               onClick={(e) => { e.stopPropagation(); minimizeWindow(win.id) }}
+              onMouseDown={(e) => e.stopPropagation()}
               className="w-5 h-5 bg-gradient-to-b from-[#fff] to-[#c4c4c4] border border-[#0a246a] rounded-sm flex items-center justify-center text-black text-xs font-bold hover:from-[#e8f4ff] hover:to-[#b0d0ff]"
             >
               _
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); maximizeWindow(win.id) }}
+              onMouseDown={(e) => e.stopPropagation()}
               className="w-5 h-5 bg-gradient-to-b from-[#fff] to-[#c4c4c4] border border-[#0a246a] rounded-sm flex items-center justify-center text-black text-xs font-bold hover:from-[#e8f4ff] hover:to-[#b0d0ff]"
             >
               □
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); closeWindow(win.id) }}
+              onMouseDown={(e) => e.stopPropagation()}
               className="w-5 h-5 bg-gradient-to-b from-[#c75050] to-[#a03030] border border-[#0a246a] rounded-sm flex items-center justify-center text-white text-xs font-bold hover:from-[#e87070] hover:to-[#c05050]"
             >
               ×
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Window Content */}
         <div className="flex-1 overflow-hidden bg-white">
           {children}
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
