@@ -28,7 +28,7 @@ export function Socials() {
         style={{ boxShadow: 'inset -1px -1px 0 #404040, inset 1px 1px 0 #fff' }}
       >
         <span className="text-xl font-bold">𝕏</span>
-        <span className="text-sm text-[#1a1a1a]">buy2024coin</span>
+        <span className="text-sm text-[#1a1a1a]">@buy2024coin</span>
       </a>
 
       {/* Tagline */}
