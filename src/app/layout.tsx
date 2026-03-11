@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   description: "A trip back to simpler times. Windows XP memecoin experience.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "64x64" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-64.png", sizes: "64x64", type: "image/png" },
       { url: "/favicon-128.png", sizes: "128x128", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
