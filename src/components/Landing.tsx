@@ -41,11 +41,9 @@ export function Landing() {
       
       {/* 2024 Logo */}
       <div className="mb-16 text-center">
-        <img 
-          src="/images/tradition-logo.png" 
-          alt="2024" 
-          className="h-24 md:h-32 mx-auto"
-        />
+        <h1 className="text-7xl md:text-9xl font-bold text-white tracking-tight">
+          2024
+        </h1>
       </div>
 
       {/* Click to Enter */}
