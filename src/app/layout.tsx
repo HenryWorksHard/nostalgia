@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "$Tradition - Remember When",
+  title: "$2024 - Remember When",
   description: "A trip back to simpler times. Windows XP memecoin experience.",
   icons: {
     icon: [

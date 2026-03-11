@@ -39,11 +39,11 @@ export function Landing() {
       <link rel="preload" href="/video/intro.mp4" as="video" type="video/mp4" />
       <link rel="preload" href="/images/bliss.jpg" as="image" />
       
-      {/* Tradition Logo */}
+      {/* 2024 Logo */}
       <div className="mb-16 text-center">
         <img 
           src="/images/tradition-logo.png" 
-          alt="Tradition" 
+          alt="2024" 
           className="h-24 md:h-32 mx-auto"
         />
       </div>
@@ -55,7 +55,7 @@ export function Landing() {
 
       {/* Tagline */}
       <p className="text-gray-500 mt-4 text-sm">
-        Return to Tradition
+        Return to 2024
       </p>
 
       {/* Contract Address */}

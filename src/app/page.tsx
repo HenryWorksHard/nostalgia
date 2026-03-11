@@ -1,7 +1,7 @@
 'use client'
 
 // Set to false to show the full site
-const COMING_SOON_MODE = true
+const COMING_SOON_MODE = false
 
 import { useAppStore } from '@/stores/appStore'
 import { Landing } from '@/components/Landing'
@@ -20,7 +20,7 @@ function ComingSoonOverlay() {
         <div className="mb-8">
           <img 
             src="/images/tradition-logo.png" 
-            alt="Tradition" 
+            alt="2024" 
             className="h-24 md:h-32 mx-auto"
           />
         </div>
@@ -34,7 +34,7 @@ function ComingSoonOverlay() {
 
         {/* Tagline */}
         <p className="text-gray-400 text-lg md:text-xl mb-8">
-          Return to Tradition
+          Return to 2024
         </p>
 
         {/* Animated dots */}

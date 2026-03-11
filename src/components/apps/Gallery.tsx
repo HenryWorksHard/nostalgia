@@ -42,7 +42,7 @@ export function Gallery() {
     <div className="flex flex-col h-full bg-[#1a1a2e]">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#2d2d44] to-[#1a1a2e] px-4 py-3 border-b border-[#3d3d5c]">
-        <h1 className="text-[#c9a227] font-bold text-lg tracking-wide">The Hall of Tradition</h1>
+        <h1 className="text-[#c9a227] font-bold text-lg tracking-wide">The Hall of 2024</h1>
         <p className="text-[#808080] text-xs mt-1">Legendary Solana Memecoins of 2024 — The ones we'll never forget</p>
       </div>
 

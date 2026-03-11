@@ -30,13 +30,13 @@ const appConfigs: Record<string, { title: string; icon: string; width: number; h
   ca: { title: 'CA.exe - Contract Address', icon: '📋', width: 450, height: 400 },
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
-  games: { title: 'Tradition Games', icon: '🎮', width: 300, height: 200 },
-  minesweeper: { title: 'Minesweeper - $Tradition Edition', icon: '💣', width: 320, height: 420 },
-  snake: { title: 'Snake - $Tradition Edition', icon: '🐍', width: 420, height: 480 },
-  paint: { title: 'Paint - $Tradition', icon: '🎨', width: 600, height: 500 },
+  games: { title: '2024 Games', icon: '🎮', width: 300, height: 200 },
+  minesweeper: { title: 'Minesweeper - $2024 Edition', icon: '💣', width: 320, height: 420 },
+  snake: { title: 'Snake - $2024 Edition', icon: '🐍', width: 420, height: 480 },
+  paint: { title: 'Paint - $2024', icon: '🎨', width: 600, height: 500 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
-  socials: { title: 'socials.exe - Follow $Tradition', icon: '💬', width: 350, height: 320 },
-  gallery: { title: 'Hall of Tradition - 2024 Legends', icon: '🖼️', width: 600, height: 550 },
+  socials: { title: 'socials.exe - Follow $2024', icon: '💬', width: 350, height: 320 },
+  gallery: { title: 'Hall of 2024 - Legends', icon: '🖼️', width: 600, height: 550 },
   recycle: { title: 'Recycle Bin - Deleted Dreams', icon: '🗑️', width: 500, height: 450 },
 }
 
@@ -147,7 +147,7 @@ function GamesMenu({ onOpenGame }: { onOpenGame: (game: string) => void }) {
   )
 }
 
-const manifestoContent = `Return to Tradition
+const manifestoContent = `Return to 2024
 ══════════════════════════════════
 
 The memecoin space is broken. You already know this.
@@ -236,11 +236,11 @@ The fix is a return to what worked.
 
 A return to conviction. A return to community that means something beyond a Telegram group with a countdown timer. A return to holding as an act of belief, not a position you manage for ninety seconds before rotating into the next launch.
 
-The fix is a return to Tradition.
+The fix is a return to 2024.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-$Tradition
+$2024
 
 This isn't a token with a roadmap full of promises nobody will keep. It's not a utility play. It's not an AI powered, cross chain, DeFi integrated anything.
 
@@ -250,7 +250,7 @@ That if you gather people who actually believe, who actually hold, who actually 
 
 Every cycle, the coins that survive aren't the ones with the best tech. They're the ones with the strongest communities. The ones where people don't just hold the token. They hold the line.
 
-$Tradition is for the ones who remember what this was supposed to be. For the ones who are tired of the PvP arena. For the ones who know that a memecoin isn't just a ticker. It's a tribe.
+$2024 is for the ones who remember what this was supposed to be. For the ones who are tired of the PvP arena. For the ones who know that a memecoin isn't just a ticker. It's a tribe.
 
 No sniping. No cabals. No ninety second exits.
 
@@ -260,7 +260,7 @@ The way it was always supposed to be.
 
 The market forgot what made memecoins matter. We didn't.
 
-Welcome back to Tradition.
+Welcome back to 2024.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -286,12 +286,12 @@ the magic died.
 
 but we remember.
 
-$Tradition is for the ones who miss what memecoins used to be.
+$2024 is for the ones who miss what memecoins used to be.
 not the rugs. not the snipers. not the cabals.
 the conviction. the community. the belief.
 
 the old way worked.
 it's time to go back.
 
-return to Tradition.
+return to 2024.
 `

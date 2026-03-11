@@ -23,8 +23,8 @@ const appConfigs: Record<string, { title: string; icon: string; width: number; h
   ca: { title: 'CA.exe - Contract Address', icon: '📋', width: 450, height: 400 },
   manifesto: { title: 'manifesto.exe - Notepad', icon: '📜', width: 500, height: 400 },
   readme: { title: 'README.txt - Notepad', icon: '📝', width: 450, height: 350 },
-  games: { title: 'Tradition Games', icon: '🎮', width: 300, height: 200 },
-  minesweeper: { title: 'Minesweeper - $Tradition Edition', icon: '💣', width: 320, height: 420 },
+  games: { title: '2024 Games', icon: '🎮', width: 300, height: 200 },
+  minesweeper: { title: 'Minesweeper - $2024 Edition', icon: '💣', width: 320, height: 420 },
   paint: { title: 'Paint', icon: '🎨', width: 600, height: 450 },
   snake: { title: 'Snake', icon: '🐍', width: 400, height: 450 },
   chart: { title: 'chart.exe - Internet Explorer', icon: '📈', width: 800, height: 600 },
@@ -67,7 +67,7 @@ export function StartMenu() {
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a246a] to-[#a6caf0] p-2 flex items-center gap-2">
         <span className="text-2xl">🪟</span>
-        <span className="text-white font-bold text-lg">$Tradition</span>
+        <span className="text-white font-bold text-lg">$2024</span>
       </div>
 
       {/* Menu Items */}

@@ -16,7 +16,7 @@ export function Socials() {
 
       {/* Title */}
       <h1 className="text-2xl font-bold text-[#1a1a1a] mb-8">
-        $Tradition Socials
+        $2024 Socials
       </h1>
 
       {/* Coming Soon */}
