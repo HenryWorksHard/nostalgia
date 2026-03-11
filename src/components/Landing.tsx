@@ -52,8 +52,8 @@ export function Landing() {
       </div>
 
       {/* Tagline */}
-      <p className="text-gray-500 mt-4 text-sm">
-        Return to Tradition
+      <p className="text-gray-400 mt-4 text-sm md:text-base text-center leading-relaxed">
+        Return to the good times, return to tradition, return to... <span className="text-white font-bold">$2024</span>
       </p>
 
       {/* Contract Address */}
