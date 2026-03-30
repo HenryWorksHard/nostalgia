@@ -1,7 +1,7 @@
 'use client'
 
 // Set to false to show the full site
-const COMING_SOON_MODE = true
+const COMING_SOON_MODE = false
 
 import { useAppStore } from '@/stores/appStore'
 import { Landing } from '@/components/Landing'
